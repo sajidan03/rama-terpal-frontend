@@ -17,7 +17,9 @@ import {
 
 import ProductCard from "../../components/user/ProductCard";
 
+// =========================
 // DATA DUMMY
+// =========================
 
 const products = [
   {
@@ -89,33 +91,102 @@ const categories = [
   },
 ];
 
+// =========================
+// LANDING PAGE
+// =========================
+
 export default function LandingPage() {
   const featuredProducts = products.slice(0, 4);
 
   return (
-    <div className="bg-gray-50">
-      {/* HERO */}
+    <div className="min-h-screen overflow-x-hidden bg-gray-50">
+      {/* =========================
+          HERO
+      ========================== */}
 
-      <section className="bg-gradient-to-r from-blue-700 to-blue-500 text-white py-24 px-30">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <section className="bg-gradient-to-r from-blue-700 to-blue-500 text-white">
+        <div
+          className="
+            mx-auto
+            grid
+            max-w-7xl
+            grid-cols-1
+            items-center
+            gap-10
+            px-4
+            py-14
+            sm:px-6
+            sm:py-16
+            md:grid-cols-2
+            md:py-20
+            lg:px-8
+            lg:py-24
+            xl:px-30
+          "
+        >
+          {/* TEXT */}
+
           <div>
-            <p className="text-orange-400 font-bold mb-4">
+            <p className="mb-3 text-sm font-bold tracking-wider text-orange-400 sm:mb-4 sm:text-base">
               RAMA TERPAL
             </p>
 
-            <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+            <h1
+              className="
+                text-3xl
+                font-bold
+                leading-tight
+                sm:text-4xl
+                lg:text-5xl
+              "
+            >
               Terpal Berkualitas untuk Berbagai Kebutuhan
             </h1>
 
-            <p className="mt-6 text-blue-100 text-lg leading-relaxed">
+            <p
+              className="
+                mt-5
+                max-w-xl
+                text-base
+                leading-relaxed
+                text-blue-100
+                sm:mt-6
+                sm:text-lg
+              "
+            >
               Pilih berbagai bahan dan ukuran terpal atau pesan ukuran custom
               sesuai kebutuhan Anda.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div
+              className="
+                mt-7
+                flex
+                flex-col
+                gap-3
+                sm:mt-8
+                sm:flex-row
+                sm:flex-wrap
+                sm:gap-4
+              "
+            >
               <Link
                 to="/kategori"
-                className="bg-orange-500 px-6 py-3 rounded-xl flex items-center gap-2 font-semibold hover:bg-orange-600 transition"
+                className="
+                  flex
+                  w-full
+                  items-center
+                  justify-center
+                  gap-2
+                  rounded-xl
+                  bg-orange-500
+                  px-6
+                  py-3
+                  font-semibold
+                  transition
+                  hover:bg-orange-600
+                  sm:w-auto
+                "
               >
                 Lihat Produk
                 <ArrowRight size={20} />
@@ -123,127 +194,237 @@ export default function LandingPage() {
 
               <Link
                 to="/custom"
-                className="bg-white text-blue-700 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition"
+                className="
+                  flex
+                  w-full
+                  items-center
+                  justify-center
+                  rounded-xl
+                  bg-white
+                  px-6
+                  py-3
+                  font-semibold
+                  text-blue-700
+                  transition
+                  hover:bg-gray-100
+                  sm:w-auto
+                "
               >
                 Custom Terpal
               </Link>
             </div>
           </div>
 
-          <div className="rounded-3xl overflow-hidden shadow-2xl">
+          {/* IMAGE */}
+
+          <div className="overflow-hidden rounded-2xl shadow-2xl sm:rounded-3xl">
             <img
               src="https://images.unsplash.com/photo-1586864387789-628af9feed72"
               alt="Produk Rama Terpal"
-              className="w-full h-80 md:h-[420px] object-cover"
+              className="
+                h-56
+                w-full
+                object-cover
+                sm:h-72
+                md:h-80
+                lg:h-[420px]
+              "
             />
           </div>
         </div>
       </section>
 
-      {/* FEATURE */}
+      {/* =========================
+          FEATURE
+      ========================== */}
 
-      <section className="max-w-7xl mx-auto px-30 -translate-y-10">
-        <div className="bg-white rounded-2xl shadow-lg grid sm:grid-cols-2 md:grid-cols-4 overflow-hidden">
-          <div className="p-6 flex gap-4 items-center hover:bg-gray-50 transition">
-            <div className="bg-blue-50 p-3 rounded-xl">
+      <section
+        className="
+          relative
+          z-10
+          mx-auto
+          max-w-7xl
+          px-4
+          sm:px-6
+          lg:px-8
+          xl:px-30
+        "
+      >
+        <div
+          className="
+            -mt-6
+            grid
+            grid-cols-1
+            overflow-hidden
+            rounded-2xl
+            bg-white
+            shadow-lg
+            sm:-mt-8
+            sm:grid-cols-2
+            lg:grid-cols-4
+          "
+        >
+          {/* ITEM 1 */}
+
+          <div className="flex items-center gap-4 border-b border-gray-100 p-5 transition hover:bg-gray-50 sm:p-6 lg:border-b-0">
+            <div className="shrink-0 rounded-xl bg-blue-50 p-3">
               <ShieldCheck className="text-blue-600" />
             </div>
 
             <div>
-              <h3 className="font-semibold text-gray-800">
-                Bahan Berkualitas
-              </h3>
+              <h3 className="font-semibold text-gray-800">Bahan Berkualitas</h3>
 
-              <p className="text-sm text-gray-500">
+              <p className="mt-1 text-sm text-gray-500">
                 Material kuat dan tahan lama
               </p>
             </div>
           </div>
 
-          <div className="p-6 flex gap-4 items-center hover:bg-gray-50 transition">
-            <div className="bg-blue-50 p-3 rounded-xl">
+          {/* ITEM 2 */}
+
+          <div className="flex items-center gap-4 border-b border-gray-100 p-5 transition hover:bg-gray-50 sm:p-6 lg:border-b-0">
+            <div className="shrink-0 rounded-xl bg-blue-50 p-3">
               <Ruler className="text-blue-600" />
             </div>
 
             <div>
-              <h3 className="font-semibold text-gray-800">
-                Custom Ukuran
-              </h3>
+              <h3 className="font-semibold text-gray-800">Custom Ukuran</h3>
 
-              <p className="text-sm text-gray-500">
-                Sesuai kebutuhan
-              </p>
+              <p className="mt-1 text-sm text-gray-500">Sesuai kebutuhan</p>
             </div>
           </div>
 
-          <div className="p-6 flex gap-4 items-center hover:bg-gray-50 transition">
-            <div className="bg-blue-50 p-3 rounded-xl">
+          {/* ITEM 3 */}
+
+          <div className="flex items-center gap-4 border-b border-gray-100 p-5 transition hover:bg-gray-50 sm:border-b-0 sm:p-6">
+            <div className="shrink-0 rounded-xl bg-blue-50 p-3">
               <Boxes className="text-blue-600" />
             </div>
 
             <div>
-              <h3 className="font-semibold text-gray-800">
-                Banyak Pilihan
-              </h3>
+              <h3 className="font-semibold text-gray-800">Banyak Pilihan</h3>
 
-              <p className="text-sm text-gray-500">
-                Beragam tipe terpal
-              </p>
+              <p className="mt-1 text-sm text-gray-500">Beragam tipe terpal</p>
             </div>
           </div>
 
-          <div className="p-6 flex gap-4 items-center hover:bg-gray-50 transition">
-            <div className="bg-blue-50 p-3 rounded-xl">
+          {/* ITEM 4 */}
+
+          <div className="flex items-center gap-4 p-5 transition hover:bg-gray-50 sm:p-6">
+            <div className="shrink-0 rounded-xl bg-blue-50 p-3">
               <Truck className="text-blue-600" />
             </div>
 
             <div>
-              <h3 className="font-semibold text-gray-800">
-                Mudah Dipesan
-              </h3>
+              <h3 className="font-semibold text-gray-800">Mudah Dipesan</h3>
 
-              <p className="text-sm text-gray-500">
-                Checkout WhatsApp
-              </p>
+              <p className="mt-1 text-sm text-gray-500">Checkout WhatsApp</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* KATEGORI */}
+      {/* =========================
+          KATEGORI
+      ========================== */}
 
-      <section className="max-w-7xl mx-auto px-30 pb-16">
-        <div className="flex justify-between items-center gap-4 mb-8">
+      <section
+        className="
+          mx-auto
+          max-w-7xl
+          px-4
+          pb-14
+          pt-14
+          sm:px-6
+          sm:pb-16
+          sm:pt-16
+          lg:px-8
+          xl:px-30
+        "
+      >
+        <div
+          className="
+            mb-7
+            flex
+            items-end
+            justify-between
+            gap-4
+            sm:mb-8
+          "
+        >
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">
+            <h2 className="text-2xl font-bold text-gray-800 sm:text-3xl">
               Kategori
             </h2>
 
-            <p className="text-gray-500 mt-2">
+            <p className="mt-2 hidden text-gray-500 sm:block">
               Pilih jenis terpal sesuai kebutuhan Anda
             </p>
           </div>
 
           <Link
             to="/kategori"
-            className="text-blue-600 font-semibold hover:text-blue-700 transition whitespace-nowrap"
+            className="
+              shrink-0
+              text-sm
+              font-semibold
+              text-blue-600
+              transition
+              hover:text-blue-700
+              sm:text-base
+            "
           >
             Lihat Semua
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+        <div
+          className="
+            grid
+            grid-cols-2
+            gap-3
+            sm:grid-cols-3
+            sm:gap-4
+            lg:grid-cols-6
+          "
+        >
           {categories.map((item) => (
             <Link
               key={item.title}
               to="/kategori"
-              className="bg-white rounded-xl p-6 text-center hover:shadow-md hover:-translate-y-1 transition"
+              className="
+                rounded-xl
+                bg-white
+                p-4
+                text-center
+                transition
+                hover:-translate-y-1
+                hover:shadow-md
+                sm:p-6
+              "
             >
-              <div className="w-14 h-14 rounded-full bg-blue-50 mx-auto flex items-center justify-center font-bold text-blue-600">
+              <div
+                className="
+                  mx-auto
+                  flex
+                  h-12
+                  w-12
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-blue-50
+                  text-sm
+                  font-bold
+                  text-blue-600
+                  sm:h-14
+                  sm:w-14
+                  sm:text-base
+                "
+              >
                 {item.title}
               </div>
 
-              <p className="mt-4 text-gray-700 font-medium">
+              <p className="mt-3 text-sm font-medium text-gray-700 sm:mt-4 sm:text-base">
                 {item.desc}
               </p>
             </Link>
@@ -251,77 +432,149 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* PRODUK UNGGULAN */}
+      {/* =========================
+          PRODUK UNGGULAN
+      ========================== */}
 
-      <section className="max-w-7xl mx-auto px-30 pb-20">
-        <div className="flex justify-between items-center gap-4 mb-8">
+      <section
+        className="
+          mx-auto
+          max-w-7xl
+          px-4
+          pb-16
+          sm:px-6
+          sm:pb-20
+          lg:px-8
+          xl:px-30
+        "
+      >
+        <div
+          className="
+            mb-7
+            flex
+            items-end
+            justify-between
+            gap-4
+            sm:mb-8
+          "
+        >
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">
+            <h2 className="text-2xl font-bold text-gray-800 sm:text-3xl">
               Produk Unggulan
             </h2>
 
-            <p className="text-gray-500 mt-2">
+            <p className="mt-2 hidden text-gray-500 sm:block">
               Pilihan terbaik Rama Terpal
             </p>
           </div>
 
           <Link
             to="/kategori"
-            className="text-blue-600 font-semibold hover:text-blue-700 transition whitespace-nowrap"
+            className="
+              shrink-0
+              text-sm
+              font-semibold
+              text-blue-600
+              transition
+              hover:text-blue-700
+              sm:text-base
+            "
           >
             Lihat Semua
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div
+          className="
+            grid
+            grid-cols-1
+            gap-5
+            sm:grid-cols-2
+            sm:gap-6
+            lg:grid-cols-4
+          "
+        >
           {featuredProducts.map((item) => (
-            <ProductCard
-              key={item.id}
-              product={item}
-            />
+            <ProductCard key={item.id} product={item} />
           ))}
         </div>
       </section>
 
-      {/* LOKASI */}
+      {/* =========================
+          LOKASI
+      ========================== */}
 
-      <section className="bg-white py-20 px-30">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* INFORMASI LOKASI */}
+      <section className="bg-white">
+        <div
+          className="
+            mx-auto
+            max-w-7xl
+            px-4
+            py-14
+            sm:px-6
+            sm:py-16
+            lg:px-8
+            lg:py-20
+            xl:px-30
+          "
+        >
+          <div
+            className="
+              grid
+              grid-cols-1
+              items-center
+              gap-10
+              lg:grid-cols-2
+              lg:gap-12
+            "
+          >
+            {/* INFORMASI */}
 
             <div>
-              <p className="text-orange-500 font-bold mb-3">
+              <p className="mb-3 text-sm font-bold tracking-wider text-orange-500 sm:text-base">
                 LOKASI KAMI
               </p>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+              <h2
+                className="
+                  text-2xl
+                  font-bold
+                  leading-tight
+                  text-gray-800
+                  sm:text-3xl
+                  md:text-4xl
+                "
+              >
                 Kunjungi Rama Terpal
               </h2>
 
-              <p className="mt-4 text-gray-500 leading-relaxed max-w-xl">
+              <p
+                className="
+                  mt-4
+                  max-w-xl
+                  text-sm
+                  leading-relaxed
+                  text-gray-500
+                  sm:text-base
+                "
+              >
                 Datang langsung ke toko Rama Terpal untuk melihat berbagai
                 pilihan produk, berkonsultasi mengenai bahan, ukuran, dan
                 pemesanan terpal custom sesuai kebutuhan Anda.
               </p>
 
-              <div className="mt-8 space-y-5">
+              <div className="mt-7 space-y-5 sm:mt-8">
                 {/* ALAMAT */}
 
-                <div className="flex gap-4 items-start">
-                  <div className="bg-blue-50 p-3 rounded-xl shrink-0">
-                    <MapPin
-                      className="text-blue-600"
-                      size={22}
-                    />
+                <div className="flex items-start gap-4">
+                  <div className="shrink-0 rounded-xl bg-blue-50 p-3">
+                    <MapPin className="text-blue-600" size={22} />
                   </div>
 
-                  <div>
-                    <p className="font-semibold text-gray-800">
-                      Alamat
-                    </p>
+                  <div className="min-w-0">
+                    <p className="font-semibold text-gray-800">Alamat</p>
 
-                    <p className="text-gray-500 mt-1">
+                    <p className="mt-1 break-words text-sm text-gray-500 sm:text-base">
                       Rama Terpal, Indonesia
                     </p>
                   </div>
@@ -329,15 +582,12 @@ export default function LandingPage() {
 
                 {/* TELEPON */}
 
-                <div className="flex gap-4 items-start">
-                  <div className="bg-blue-50 p-3 rounded-xl shrink-0">
-                    <Phone
-                      className="text-blue-600"
-                      size={22}
-                    />
+                <div className="flex items-start gap-4">
+                  <div className="shrink-0 rounded-xl bg-blue-50 p-3">
+                    <Phone className="text-blue-600" size={22} />
                   </div>
 
-                  <div>
+                  <div className="min-w-0">
                     <p className="font-semibold text-gray-800">
                       Telepon / WhatsApp
                     </p>
@@ -346,7 +596,16 @@ export default function LandingPage() {
                       href="https://wa.me/6281234567890"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-gray-500 mt-1 block hover:text-blue-600 transition"
+                      className="
+                        mt-1
+                        block
+                        break-words
+                        text-sm
+                        text-gray-500
+                        transition
+                        hover:text-blue-600
+                        sm:text-base
+                      "
                     >
                       +62 812-3456-7890
                     </a>
@@ -355,44 +614,45 @@ export default function LandingPage() {
 
                 {/* EMAIL */}
 
-                <div className="flex gap-4 items-start">
-                  <div className="bg-blue-50 p-3 rounded-xl shrink-0">
-                    <Mail
-                      className="text-blue-600"
-                      size={22}
-                    />
+                <div className="flex items-start gap-4">
+                  <div className="shrink-0 rounded-xl bg-blue-50 p-3">
+                    <Mail className="text-blue-600" size={22} />
                   </div>
 
-                  <div>
-                    <p className="font-semibold text-gray-800">
-                      Email
-                    </p>
+                  <div className="min-w-0">
+                    <p className="font-semibold text-gray-800">Email</p>
 
                     <a
                       href="mailto:info@ramaterpal.com"
-                      className="text-gray-500 mt-1 block hover:text-blue-600 transition"
+                      className="
+                        mt-1
+                        block
+                        break-all
+                        text-sm
+                        text-gray-500
+                        transition
+                        hover:text-blue-600
+                        sm:text-base
+                      "
                     >
                       info@ramaterpal.com
                     </a>
                   </div>
                 </div>
 
-                {/* JAM OPERASIONAL */}
+                {/* JAM */}
 
-                <div className="flex gap-4 items-start">
-                  <div className="bg-blue-50 p-3 rounded-xl shrink-0">
-                    <Clock
-                      className="text-blue-600"
-                      size={22}
-                    />
+                <div className="flex items-start gap-4">
+                  <div className="shrink-0 rounded-xl bg-blue-50 p-3">
+                    <Clock className="text-blue-600" size={22} />
                   </div>
 
-                  <div>
+                  <div className="min-w-0">
                     <p className="font-semibold text-gray-800">
                       Jam Operasional
                     </p>
 
-                    <p className="text-gray-500 mt-1">
+                    <p className="mt-1 text-sm text-gray-500 sm:text-base">
                       Senin - Sabtu, 08.00 - 17.00 WIB
                     </p>
                   </div>
@@ -400,9 +660,20 @@ export default function LandingPage() {
               </div>
             </div>
 
-            {/* GOOGLE MAPS */}
+            {/* GOOGLE MAP */}
 
-            <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-100 bg-gray-100">
+            <div
+              className="
+                w-full
+                overflow-hidden
+                rounded-2xl
+                border
+                border-gray-100
+                bg-gray-100
+                shadow-xl
+                sm:rounded-3xl
+              "
+            >
               <iframe
                 title="Lokasi Rama Terpal"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.686391917023!2d108.2603435740287!3d-7.609064375212884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e65ef0b67bc851d%3A0xf05b9850f92f678e!2sRama%20Terpal!5e0!3m2!1sid!2sid!4v1787664545617!5m2!1sid!2sid"
@@ -414,34 +685,57 @@ export default function LandingPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"
-                className="w-full"
+                className="
+                  block
+                  h-[300px]
+                  w-full
+                  sm:h-[380px]
+                  lg:h-[450px]
+                "
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* =========================
+          FOOTER
+      ========================== */}
 
-      <footer className="bg-gray-950 text-white px-30">
-        <div className="max-w-7xl mx-auto py-16">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-14">
+      <footer className="bg-gray-950 text-white">
+        <div
+          className="
+            mx-auto
+            max-w-7xl
+            px-4
+            py-12
+            sm:px-6
+            sm:py-14
+            lg:px-8
+            lg:py-16
+            xl:px-30
+          "
+        >
+          <div
+            className="
+              grid
+              grid-cols-1
+              gap-10
+              sm:grid-cols-2
+              lg:grid-cols-4
+              lg:gap-12
+            "
+          >
             {/* BRAND */}
 
             <div>
-              <Link
-                to="/"
-                className="inline-block"
-              >
+              <Link to="/" className="inline-block">
                 <h2 className="text-2xl font-bold">
-                  RAMA{" "}
-                  <span className="text-orange-500">
-                    TERPAL
-                  </span>
+                  RAMA <span className="text-orange-500">TERPAL</span>
                 </h2>
               </Link>
 
-              <p className="text-gray-400 mt-5 leading-relaxed text-sm">
+              <p className="mt-5 text-sm leading-relaxed text-gray-400">
                 Menyediakan berbagai jenis terpal berkualitas untuk kebutuhan
                 rumah tangga, usaha, industri, pertanian, transportasi, hingga
                 kebutuhan custom.
@@ -450,7 +744,20 @@ export default function LandingPage() {
               <div className="mt-6">
                 <Link
                   to="/kategori"
-                  className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 px-5 py-3 rounded-xl font-semibold transition"
+                  className="
+                    inline-flex
+                    items-center
+                    gap-2
+                    rounded-xl
+                    bg-orange-500
+                    px-5
+                    py-3
+                    text-sm
+                    font-semibold
+                    transition
+                    hover:bg-orange-600
+                    sm:text-base
+                  "
                 >
                   Belanja Sekarang
                   <ArrowRight size={18} />
@@ -461,36 +768,22 @@ export default function LandingPage() {
             {/* NAVIGASI */}
 
             <div>
-              <h3 className="font-semibold text-lg mb-5">
-                Navigasi
-              </h3>
+              <h3 className="mb-5 text-lg font-semibold">Navigasi</h3>
 
-              <div className="flex flex-col gap-3 text-gray-400">
-                <Link
-                  to="/"
-                  className="hover:text-white transition"
-                >
+              <div className="flex flex-col gap-3 text-sm text-gray-400 sm:text-base">
+                <Link to="/" className="transition hover:text-white">
                   Beranda
                 </Link>
 
-                <Link
-                  to="/kategori"
-                  className="hover:text-white transition"
-                >
+                <Link to="/kategori" className="transition hover:text-white">
                   Semua Produk
                 </Link>
 
-                <Link
-                  to="/custom"
-                  className="hover:text-white transition"
-                >
+                <Link to="/custom" className="transition hover:text-white">
                   Custom Terpal
                 </Link>
 
-                <Link
-                  to="/tentang"
-                  className="hover:text-white transition"
-                >
+                <Link to="/tentang" className="transition hover:text-white">
                   Tentang Kami
                 </Link>
               </div>
@@ -499,56 +792,42 @@ export default function LandingPage() {
             {/* KONTAK */}
 
             <div>
-              <h3 className="font-semibold text-lg mb-5">
-                Hubungi Kami
-              </h3>
+              <h3 className="mb-5 text-lg font-semibold">Hubungi Kami</h3>
 
-              <div className="space-y-5 text-gray-400 text-sm">
-                <div className="flex gap-3 items-start">
+              <div className="space-y-5 text-sm text-gray-400">
+                <div className="flex items-start gap-3">
                   <MapPin
                     size={20}
-                    className="text-orange-500 shrink-0 mt-0.5"
+                    className="mt-0.5 shrink-0 text-orange-500"
                   />
 
-                  <span>
-                    Rama Terpal, Indonesia
-                  </span>
+                  <span className="break-words">Rama Terpal, Indonesia</span>
                 </div>
 
                 <a
                   href="https://wa.me/6281234567890"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex gap-3 items-center hover:text-white transition"
+                  className="flex items-center gap-3 transition hover:text-white"
                 >
-                  <Phone
-                    size={20}
-                    className="text-orange-500 shrink-0"
-                  />
+                  <Phone size={20} className="shrink-0 text-orange-500" />
 
-                  <span>
-                    +62 812-3456-7890
-                  </span>
+                  <span>+62 812-3456-7890</span>
                 </a>
 
                 <a
                   href="mailto:info@ramaterpal.com"
-                  className="flex gap-3 items-center hover:text-white transition"
+                  className="flex items-start gap-3 transition hover:text-white"
                 >
-                  <Mail
-                    size={20}
-                    className="text-orange-500 shrink-0"
-                  />
+                  <Mail size={20} className="mt-0.5 shrink-0 text-orange-500" />
 
-                  <span>
-                    info@ramaterpal.com
-                  </span>
+                  <span className="break-all">info@ramaterpal.com</span>
                 </a>
 
-                <div className="flex gap-3 items-start">
+                <div className="flex items-start gap-3">
                   <Clock
                     size={20}
-                    className="text-orange-500 shrink-0 mt-0.5"
+                    className="mt-0.5 shrink-0 text-orange-500"
                   />
 
                   <span>
@@ -563,16 +842,16 @@ export default function LandingPage() {
             {/* SOSIAL MEDIA */}
 
             <div>
-              <h3 className="font-semibold text-lg mb-5">
+              <h3 className="mb-5 text-lg font-semibold">
                 Sosial Media & Marketplace
               </h3>
 
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+              <p className="mb-6 text-sm leading-relaxed text-gray-400">
                 Ikuti Rama Terpal dan temukan berbagai produk serta penawaran
                 terbaru kami.
               </p>
 
-              <div className="flex gap-3 flex-wrap">
+              <div className="flex flex-wrap gap-3">
                 {/* INSTAGRAM */}
 
                 <a
@@ -581,7 +860,18 @@ export default function LandingPage() {
                   rel="noreferrer"
                   aria-label="Instagram Rama Terpal"
                   title="Instagram"
-                  className="w-11 h-11 flex items-center justify-center bg-gray-800 rounded-xl hover:bg-pink-600 hover:-translate-y-1 transition"
+                  className="
+                    flex
+                    h-11
+                    w-11
+                    items-center
+                    justify-center
+                    rounded-xl
+                    bg-gray-800
+                    transition
+                    hover:-translate-y-1
+                    hover:bg-pink-600
+                  "
                 >
                   <Camera size={20} />
                 </a>
@@ -594,7 +884,18 @@ export default function LandingPage() {
                   rel="noreferrer"
                   aria-label="Facebook Rama Terpal"
                   title="Facebook"
-                  className="w-11 h-11 flex items-center justify-center bg-gray-800 rounded-xl hover:bg-blue-600 hover:-translate-y-1 transition"
+                  className="
+                    flex
+                    h-11
+                    w-11
+                    items-center
+                    justify-center
+                    rounded-xl
+                    bg-gray-800
+                    transition
+                    hover:-translate-y-1
+                    hover:bg-blue-600
+                  "
                 >
                   <Users size={20} />
                 </a>
@@ -607,36 +908,63 @@ export default function LandingPage() {
                   rel="noreferrer"
                   aria-label="Shopee Rama Terpal"
                   title="Shopee"
-                  className="h-11 px-4 flex items-center gap-2 bg-orange-500 rounded-xl hover:bg-orange-600 hover:-translate-y-1 transition font-semibold text-sm"
+                  className="
+                    flex
+                    h-11
+                    items-center
+                    gap-2
+                    rounded-xl
+                    bg-orange-500
+                    px-4
+                    text-sm
+                    font-semibold
+                    transition
+                    hover:-translate-y-1
+                    hover:bg-orange-600
+                  "
                 >
                   <ShoppingBag size={20} />
                   Shopee
                 </a>
               </div>
 
-              <div className="mt-6">
-                <p className="text-gray-500 text-sm">
-                  Pesan langsung melalui WhatsApp atau marketplace resmi Rama
-                  Terpal.
-                </p>
-              </div>
+              <p className="mt-6 text-sm leading-relaxed text-gray-500">
+                Pesan langsung melalui WhatsApp atau marketplace resmi Rama
+                Terpal.
+              </p>
             </div>
           </div>
 
           {/* COPYRIGHT */}
 
-          <div className="border-t border-gray-800 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+          <div
+            className="
+              mt-10
+              flex
+              flex-col
+              gap-3
+              border-t
+              border-gray-800
+              pt-6
+              text-center
+              text-xs
+              text-gray-500
+              sm:text-sm
+              md:mt-12
+              md:flex-row
+              md:items-center
+              md:justify-between
+              md:text-left
+            "
+          >
             <p>
               © {new Date().getFullYear()} Rama Terpal. All rights reserved.
             </p>
 
-            <p>
-              Terpal berkualitas untuk setiap kebutuhan.
-            </p>
+            <p>Terpal berkualitas untuk setiap kebutuhan.</p>
           </div>
         </div>
       </footer>
     </div>
-    
   );
 }
