@@ -1,111 +1,181 @@
 import { Link } from "react-router-dom";
-import {
-  ArrowRight,
-  Boxes,
-  Ruler,
-  ShieldCheck,
-  Truck,
-} from "lucide-react";
+
+import { ArrowRight, ShieldCheck, Ruler, Truck, Boxes } from "lucide-react";
 
 import ProductCard from "../../components/user/ProductCard";
-import Footer from "../../components/user/Footer";
-import { products } from "../../data/products";
+
+// DATA DUMMY
+
+const products = [
+  {
+    id: 1,
+    nama: "Terpal A12 Premium Biru",
+    bahan: "A12",
+    warna: "Biru",
+    ukuran: "3 x 4 Meter",
+    harga: 250000,
+    stok: 50,
+    image: "https://images.unsplash.com/photo-1586864387789-628af9feed72",
+  },
+
+  {
+    id: 2,
+    nama: "Terpal PVC Anti Air Premium",
+    bahan: "PVC",
+    warna: "Orange",
+    ukuran: "4 x 6 Meter",
+    harga: 500000,
+    stok: 30,
+    image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b",
+  },
+
+  {
+    id: 3,
+    nama: "Terpal Kanvas Tebal",
+    bahan: "Kanvas",
+    warna: "Hijau",
+    ukuran: "2 x 3 Meter",
+    harga: 350000,
+    stok: 20,
+    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+  },
+
+  {
+    id: 4,
+    nama: "Terpal Truck Heavy Duty",
+    bahan: "Heavy Duty",
+    warna: "Hitam",
+    ukuran: "5 x 8 Meter",
+    harga: 850000,
+    stok: 15,
+    image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c",
+  },
+];
+
+const categories = [
+  {
+    title: "A5",
+    desc: "Terpal A5",
+  },
+
+  {
+    title: "A8",
+    desc: "Terpal A8",
+  },
+
+  {
+    title: "A12",
+    desc: "Terpal A12",
+  },
+
+  {
+    title: "PVC",
+    desc: "PVC",
+  },
+
+  {
+    title: "Kanvas",
+    desc: "Kanvas",
+  },
+
+  {
+    title: "Custom",
+    desc: "Custom Ukuran",
+  },
+];
 
 export default function LandingPage() {
+  const featuredProducts = products.slice(0, 4);
+
   return (
     <div className="bg-gray-50">
       {/* HERO */}
 
       <section
         className="
-          bg-blue-700
-          text-white
-          px-5
-          py-12
-          sm:py-16
-        "
+bg-gradient-to-r
+from-blue-700
+to-blue-500
+text-white
+py-24
+px-30
+"
       >
         <div
           className="
-            max-w-7xl
-            mx-auto
-            grid
-            md:grid-cols-2
-            gap-10
-            items-center
-          "
+max-w-7xl
+mx-auto
+grid
+md:grid-cols-2
+gap-10
+items-center
+"
         >
           <div>
             <p
               className="
-                text-orange-300
-                font-semibold
-                mb-3
-              "
+text-orange-400
+font-bold
+mb-4
+"
             >
               RAMA TERPAL
             </p>
 
             <h1
               className="
-                text-3xl
-                sm:text-4xl
-                lg:text-5xl
-                font-bold
-                leading-tight
-              "
+text-3xl
+font-bold
+leading-tight
+"
             >
               Terpal Berkualitas untuk Berbagai Kebutuhan
             </h1>
 
             <p
               className="
-                mt-5
-                text-blue-100
-                max-w-xl
-              "
+mt-6
+text-blue-100
+text-lg
+"
             >
-              Pilih berbagai bahan dan ukuran terpal atau pesan
-              ukuran custom sesuai kebutuhan Anda.
+              Pilih berbagai bahan dan ukuran terpal atau pesan ukuran custom
+              sesuai kebutuhan Anda.
             </p>
 
             <div
               className="
-                flex
-                flex-wrap
-                gap-3
-                mt-7
-              "
+mt-8
+flex
+gap-4
+"
             >
               <Link
                 to="/kategori"
                 className="
-                  bg-orange-500
-                  hover:bg-orange-600
-                  px-5
-                  py-3
-                  rounded-lg
-                  flex
-                  items-center
-                  gap-2
-                  font-medium
-                "
+bg-orange-500
+px-6
+py-3
+rounded-xl
+flex
+items-center
+gap-2
+hover:bg-orange-600
+"
               >
                 Lihat Produk
-
-                <ArrowRight size={18} />
+                <ArrowRight size={20} />
               </Link>
 
               <Link
                 to="/custom"
                 className="
-                  bg-white
-                  text-blue-700
-                  px-5
-                  py-3
-                  rounded-lg
-                  font-medium
-                "
+bg-white
+text-blue-700
+px-6
+py-3
+rounded-xl
+"
               >
                 Custom Terpal
               </Link>
@@ -114,299 +184,237 @@ export default function LandingPage() {
 
           <div
             className="
-              rounded-2xl
-              overflow-hidden
-              h-64
-              sm:h-72
-            "
+rounded-3xl
+overflow-hidden
+"
           >
             <img
-              src="https://images.unsplash.com/photo-1586864387789-628af9feed72?auto=format&fit=crop&w=1000&q=80"
-              alt="Rama Terpal"
-              className="w-full h-full object-cover"
+              src="https://images.unsplash.com/photo-1586864387789-628af9feed72"
+              className="
+w-full
+h-80
+object-cover
+"
             />
           </div>
         </div>
       </section>
 
-      {/* KEUNGGULAN */}
+      {/* FEATURE */}
 
-      <section className="px-4 -mt-5 relative z-10">
+      <section
+        className="
+max-w-7xl
+mx-auto
+px-30
+-translate-y-10
+"
+      >
         <div
           className="
-            max-w-7xl
-            mx-auto
-            bg-white
-            border
-            rounded-xl
-            grid
-            grid-cols-2
-            lg:grid-cols-4
-          "
+bg-white
+rounded-2xl
+shadow-lg
+grid
+md:grid-cols-4
+overflow-hidden
+"
         >
-          <Feature
-            icon={<ShieldCheck size={25} />}
-            title="Bahan Berkualitas"
-            description="Pilihan material terpal"
-          />
+          <div className="p-6 flex gap-4 items-center hover:bg-gray-50">
+            <div className="bg-blue-50 p-3 rounded-xl">
+              <ShieldCheck className="text-blue-600" />
+            </div>
 
-          <Feature
-            icon={<Ruler size={25} />}
-            title="Custom Ukuran"
-            description="Sesuai kebutuhan"
-          />
+            <div>
+              <h3 className="font-semibold">Bahan Berkualitas</h3>
 
-          <Feature
-            icon={<Boxes size={25} />}
-            title="Banyak Pilihan"
-            description="Beragam tipe terpal"
-          />
+              <p className="text-sm text-gray-500">
+                Material kuat dan tahan lama
+              </p>
+            </div>
+          </div>
 
-          <Feature
-            icon={<Truck size={25} />}
-            title="Mudah Dipesan"
-            description="Checkout via WhatsApp"
-          />
+          <div className="p-6 flex gap-4 items-center hover:bg-gray-50">
+            <div className="bg-blue-50 p-3 rounded-xl">
+              <Ruler className="text-blue-600" />
+            </div>
+
+            <div>
+              <h3 className="font-semibold">Custom Ukuran</h3>
+
+              <p className="text-sm text-gray-500">Sesuai kebutuhan</p>
+            </div>
+          </div>
+
+          <div className="p-6 flex gap-4 items-center hover:bg-gray-50">
+            <div className="bg-blue-50 p-3 rounded-xl">
+              <Boxes className="text-blue-600" />
+            </div>
+
+            <div>
+              <h3 className="font-semibold">Banyak Pilihan</h3>
+
+              <p className="text-sm text-gray-500">Beragam tipe terpal</p>
+            </div>
+          </div>
+
+          <div className="p-6 flex gap-4 items-center hover:bg-gray-50">
+            <div className="bg-blue-50 p-3 rounded-xl">
+              <Truck className="text-blue-600" />
+            </div>
+
+            <div>
+              <h3 className="font-semibold">Mudah Dipesan</h3>
+
+              <p className="text-sm text-gray-500">Checkout WhatsApp</p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* KATEGORI */}
 
-      <section className="px-4 py-10">
-        <div className="max-w-7xl mx-auto">
-          <div
+      <section
+        className="
+max-w-7xl
+mx-auto
+px-30
+pb-10
+"
+      >
+        <div className="flex justify-between mb-6">
+          <h2
             className="
-              flex
-              justify-between
-              items-center
-              mb-5
-            "
+text-3xl
+font-bold
+"
           >
-            <h2
-              className="
-                text-xl
-                sm:text-2xl
-                font-bold
-                text-gray-800
-              "
-            >
-              Kategori
-            </h2>
+            Kategori
+          </h2>
 
-            <Link
-              to="/kategori"
-              className="
-                text-sm
-                text-blue-600
-                font-medium
-              "
-            >
-              Lihat Semua
-            </Link>
-          </div>
-
-          <div
+          <Link
+            to="/kategori"
             className="
-              grid
-              grid-cols-3
-              sm:grid-cols-4
-              md:grid-cols-6
-              gap-3
-            "
+text-blue-600
+"
           >
-            <CategoryMini title="A5" />
-            <CategoryMini title="A8" />
-            <CategoryMini title="A12" />
-            <CategoryMini title="PVC" />
-            <CategoryMini title="Kanvas" />
-            <CategoryMini title="Custom" />
-          </div>
+            Lihat Semua
+          </Link>
+        </div>
+
+        <div
+          className="
+grid
+grid-cols-2
+md:grid-cols-6
+gap-4
+"
+        >
+          {categories.map((item) => (
+            <div
+              key={item.title}
+              className="
+bg-white
+rounded-xl
+p-6
+text-center
+hover:shadow-md
+transition
+"
+            >
+              <div
+                className="
+w-14
+h-14
+rounded-full
+bg-blue-50
+mx-auto
+flex
+items-center
+justify-center
+font-bold
+text-blue-600
+"
+              >
+                {item.title}
+              </div>
+
+              <p
+                className="
+mt-4
+text-gray-700
+"
+              >
+                {item.desc}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* PRODUCT */}
+      {/* PRODUK */}
 
-      <section className="px-4 pb-16">
-        <div className="max-w-7xl mx-auto">
-          <div
-            className="
-              bg-white
-              border-b-4
-              border-orange-500
-              px-5
-              py-4
-              mb-4
-            "
-          >
+      <section
+        className="
+max-w-7xl
+mx-auto
+px-30
+pb-20
+"
+      >
+        <div
+          className="
+flex
+justify-between
+items-center
+mb-8
+"
+        >
+          <div>
             <h2
               className="
-                text-xl
-                sm:text-2xl
-                font-bold
-                text-orange-600
-              "
+text-3xl
+font-bold
+text-gray-800
+"
             >
-              Rekomendasi Produk
+              Produk Unggulan
             </h2>
 
-            <p className="text-sm text-gray-500 mt-1">
-              Pilihan terpal untuk kebutuhan Anda
+            <p
+              className="
+text-gray-500
+mt-2
+"
+            >
+              Pilihan terbaik Rama Terpal
             </p>
           </div>
 
-          {/* GRID SHOPEE STYLE */}
-
-          <div
+          <Link
+            to="/kategori"
             className="
-              grid
-              grid-cols-2
-              sm:grid-cols-3
-              md:grid-cols-4
-              lg:grid-cols-5
-              xl:grid-cols-6
-              gap-2
-              sm:gap-3
-            "
+text-blue-600
+"
           >
-            {products.map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-              />
-            ))}
-          </div>
+            Lihat Semua
+          </Link>
+        </div>
 
-          <div className="flex justify-center mt-10">
-            <Link
-              to="/kategori"
-              className="
-                border
-                border-blue-600
-                text-blue-600
-                hover:bg-blue-600
-                hover:text-white
-                transition
-                px-10
-                py-3
-                rounded-lg
-                font-medium
-              "
-            >
-              Lihat Semua Produk
-            </Link>
-          </div>
+        <div
+          className="
+grid
+grid-cols-1
+sm:grid-cols-2
+lg:grid-cols-4
+gap-6
+"
+        >
+          {featuredProducts.map((item) => (
+            <ProductCard key={item.id} product={item} />
+          ))}
         </div>
       </section>
-
-      <Footer />
     </div>
-  );
-}
-
-
-
-function Feature({
-  icon,
-  title,
-  description,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}) {
-  return (
-    <div
-      className="
-        p-4
-        sm:p-5
-        flex
-        items-center
-        gap-3
-        border-r
-        border-b
-        lg:border-b-0
-      "
-    >
-      <div
-        className="
-          text-blue-600
-          bg-blue-50
-          p-2
-          rounded-lg
-        "
-      >
-        {icon}
-      </div>
-
-      <div>
-        <p
-          className="
-            font-semibold
-            text-sm
-            text-gray-800
-          "
-        >
-          {title}
-        </p>
-
-        <p
-          className="
-            text-xs
-            text-gray-500
-            hidden
-            sm:block
-          "
-        >
-          {description}
-        </p>
-      </div>
-    </div>
-  );
-}
-
-
-
-function CategoryMini({
-  title,
-}: {
-  title: string;
-}) {
-  return (
-    <Link
-      to="/kategori"
-      className="
-        bg-white
-        border
-        rounded-lg
-        py-5
-        px-2
-        text-center
-        hover:border-orange-500
-        hover:text-orange-600
-        transition
-      "
-    >
-      <div
-        className="
-          w-12
-          h-12
-          mx-auto
-          mb-3
-          rounded-full
-          bg-blue-50
-          flex
-          items-center
-          justify-center
-          text-blue-600
-          font-bold
-        "
-      >
-        {title.substring(0, 2)}
-      </div>
-
-      <p className="text-sm font-medium">
-        {title}
-      </p>
-    </Link>
   );
 }

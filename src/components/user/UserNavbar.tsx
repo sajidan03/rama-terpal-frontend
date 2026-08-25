@@ -1,51 +1,36 @@
 import { Link } from "react-router-dom";
-import {
-ShoppingCart,
-Menu,
-X
-} from "lucide-react";
+import { ShoppingCart, Menu, X } from "lucide-react";
 
-import {
-useState
-} from "react";
+import { useState } from "react";
 
+export default function UserNavbar() {
+  const [open, setOpen] = useState(false);
 
-export default function UserNavbar(){
+  const menus = [
+    {
+      name: "Home",
+      path: "/",
+    },
 
+    {
+      name: "Kategori",
+      path: "/kategori",
+    },
 
-const [open,setOpen] = useState(false);
+    {
+      name: "Custom",
+      path: "/custom",
+    },
 
+    {
+      name: "Kontak",
+      path: "/kontak",
+    },
+  ];
 
-
-const menus=[
-
-{
-name:"Home",
-path:"/"
-},
-
-{
-name:"Kategori",
-path:"/kategori"
-},
-
-{
-name:"Custom",
-path:"/custom"
-},
-
-{
-name:"Kontak",
-path:"/kontak"
-}
-
-];
-
-
-
-return (
-
-<nav className="
+  return (
+    <nav
+      className="
 fixed 
 top-0
 left-0
@@ -53,81 +38,61 @@ right-0
 z-50
 bg-white
 shadow-md
-">
-
-
-<div className="
+"
+    >
+      <div
+        className="
 max-w-7xl
 mx-auto
-px-6
+px-30
 h-20
 flex
 items-center
 justify-between
-">
+"
+      >
+        {/* LOGO */}
 
-
-{/* LOGO */}
-
-<Link
-to="/"
-className="
+        <Link
+          to="/"
+          className="
 text-2xl
 font-bold
 text-blue-600
 "
->
+        >
+          Rama
+          <span className="text-orange-500">Terpal</span>
+        </Link>
 
-Rama
-<span className="text-orange-500">
-Terpal
-</span>
+        {/* Desktop Menu */}
 
-</Link>
-
-
-
-{/* Desktop Menu */}
-
-<div
-className="
+        <div
+          className="
 hidden
 md:flex
 gap-8
 items-center
 "
->
-
-
-{
-menus.map(
-(item)=>(
-
-<Link
-key={item.name}
-to={item.path}
-className="
+        >
+          {menus.map((item) => (
+            <Link
+              key={item.name}
+              to={item.path}
+              className="
 font-medium
 text-gray-700
 hover:text-blue-600
 transition
 "
->
+            >
+              {item.name}
+            </Link>
+          ))}
 
-{item.name}
-
-</Link>
-
-)
-
-)
-}
-
-
-
-<Link
-to="/checkout"
-className="
+          <Link
+            to="/checkout"
+            className="
 flex
 items-center
 gap-2
@@ -138,63 +103,29 @@ py-2
 rounded-full
 hover:bg-orange-600
 "
->
+          >
+            <ShoppingCart size={18} />
+            Checkout
+          </Link>
+        </div>
 
-<ShoppingCart size={18}/>
+        {/* Mobile Button */}
 
-Checkout
-
-</Link>
-
-
-</div>
-
-
-
-
-
-{/* Mobile Button */}
-
-<button
-
-onClick={()=>setOpen(!open)}
-
-className="
+        <button
+          onClick={() => setOpen(!open)}
+          className="
 md:hidden
 "
+        >
+          {open ? <X /> : <Menu />}
+        </button>
+      </div>
 
->
+      {/* Mobile Menu */}
 
-{
-
-open ?
-
-<X/>
-
-:
-
-<Menu/>
-
-}
-
-
-</button>
-
-
-</div>
-
-
-
-
-
-{/* Mobile Menu */}
-
-{
-
-open &&
-
-<div
-className="
+      {open && (
+        <div
+          className="
 md:hidden
 bg-white
 border-t
@@ -202,44 +133,22 @@ px-6
 py-5
 space-y-4
 "
->
-
-
-{
-menus.map(
-(item)=>(
-
-<Link
-onClick={()=>setOpen(false)}
-key={item.name}
-to={item.path}
-className="
+        >
+          {menus.map((item) => (
+            <Link
+              onClick={() => setOpen(false)}
+              key={item.name}
+              to={item.path}
+              className="
 block
 text-gray-700
 "
->
-
-{item.name}
-
-</Link>
-
-)
-
-)
-}
-
-
-</div>
-
-
-}
-
-
-
-</nav>
-
-
-)
-
-
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
+      )}
+    </nav>
+  );
 }
