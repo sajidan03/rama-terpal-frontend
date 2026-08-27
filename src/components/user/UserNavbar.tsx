@@ -8,23 +8,13 @@ export default function UserNavbar() {
 
   const menus = [
     {
-      name: "Home",
+      name: "Beranda",
       path: "/",
     },
 
     {
       name: "Kategori",
       path: "/kategori",
-    },
-
-    {
-      name: "Custom",
-      path: "/custom",
-    },
-
-    {
-      name: "Kontak",
-      path: "/kontak",
     },
   ];
 

@@ -243,7 +243,7 @@ export default function LandingPage() {
                   <ArrowRight size={20} />
                 </Link>
 
-                <Link
+                {/* <Link
                   to="/custom"
                   className="
                     flex
@@ -266,7 +266,7 @@ export default function LandingPage() {
                   "
                 >
                   Custom Terpal
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
@@ -718,12 +718,12 @@ export default function LandingPage() {
                   Semua Produk
                 </Link>
 
-                <Link
+                {/* <Link
                   to="/custom"
                   className="transition hover:text-white"
                 >
                   Custom Terpal
-                </Link>
+                </Link> */}
 
                 <Link
                   to="/tentang"

@@ -8,7 +8,6 @@ Route
 // USER
 import LandingPage from "../pages/user/LandingPage";
 import CategoryPage from "../pages/user/CategoryPage";
-import CustomPage from "../pages/user/CustomPage";
 import ContactPage from "../pages/user/ContactPage";
 import CheckoutPage from "../pages/user/CheckoutPage";
 
@@ -56,18 +55,6 @@ element={<CategoryPage/>}
 <Route
 path="/produk/:id"
 element={<DetailProductPage/>}
-/>
-
-
-<Route
-path="/custom"
-element={<CustomPage/>}
-/>
-
-
-<Route
-path="/kontak"
-element={<ContactPage/>}
 />
 
 
