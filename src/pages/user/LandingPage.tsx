@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 
 import ProductCard from "../../components/user/ProductCard";
+import heroImage from "../../assets/landing.jpeg";
 
 // =========================
 // DATA DUMMY
@@ -95,263 +96,278 @@ const categories = [
   },
 ];
 
+// =========================
+// LANDING PAGE
+// =========================
+
 export default function LandingPage() {
   const featuredProducts = products.slice(0, 4);
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-gray-50">
       {/* =========================
-          HERO
+          HERO + FEATURE
+          Di layar lg ke atas, wrapper ini dipatok setinggi
+          (100vh - tinggi navbar) supaya Hero + kartu fitur
+          selalu pas dalam satu layar tanpa perlu scroll.
+          GANTI angka 80px di bawah sesuai tinggi navbar aslimu.
       ========================== */}
-
-      <section
-        className="
-          relative
-          min-h-[520px]
-          overflow-hidden
-          bg-cover
-          bg-center
-          bg-no-repeat
-          text-white
-          sm:min-h-[580px]
-          lg:min-h-[620px]
-        "
-        style={{
-          backgroundImage: "url('/hero.jpeg')",
-        }}
-      >
-        {/* OVERLAY GELAP */}
-        <div className="absolute inset-0 bg-black/55" />
-
-        {/* GRADIENT TAMBAHAN */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/45 to-black/20" />
-
-        {/* HERO CONTENT */}
-        <div
+      <div className="lg:flex lg:h-[calc(100vh_-_80px)] lg:flex-col">
+        {/* =========================
+            HERO
+        ========================== */}
+        <section
           className="
             relative
-            z-10
-            mx-auto
-            flex
             min-h-[520px]
-            max-w-7xl
-            items-center
-            px-4
-            py-14
+            flex-1
+            overflow-hidden
+            bg-cover
+            bg-center
+            bg-no-repeat
+            text-white
             sm:min-h-[580px]
+            lg:min-h-0
+          "
+          style={{
+            backgroundImage: `url(${heroImage})`,
+          }}
+        >
+          {/* OVERLAY GELAP */}
+          <div className="absolute inset-0 bg-black/45" />
+
+          {/* GRADIENT GELAP DARI KIRI */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/10" />
+
+          {/* HERO CONTENT */}
+          <div
+            className="
+              relative
+              z-10
+              mx-auto
+              flex
+              min-h-[520px]
+              max-w-7xl
+              items-center
+              px-4
+              py-14
+              sm:min-h-[580px]
+              sm:px-6
+              sm:py-16
+              md:py-20
+              lg:h-full
+              lg:min-h-0
+              lg:px-8
+              lg:py-10
+              xl:px-30
+            "
+          >
+            <div className="max-w-3xl -mt-30">
+              <p
+                className="
+                  mb-3
+                  text-sm
+                  font-bold
+                  tracking-[0.18em]
+                  text-orange-400
+                  sm:mb-4
+                  sm:text-base
+                "
+              >
+                RAMA TERPAL
+              </p>
+
+              <h1
+                className="
+                  max-w-2xl
+                  text-2xl
+                  font-bold
+                  leading-tight
+                  drop-shadow-lg
+                  sm:text-2xl
+                  md:text-3xl
+                  lg:text-4xl
+                "
+              >
+                Terpal Berkualitas untuk Berbagai Kebutuhan
+              </h1>
+
+              <p
+                className="
+                  mt-5
+                  max-w-2xl
+                  text-base
+                  leading-relaxed
+                  text-gray-200
+                  drop-shadow
+                  sm:mt-6
+                  sm:text-lg
+                  lg:text-xl
+                "
+              >
+                Pilih berbagai bahan dan ukuran terpal atau pesan ukuran custom
+                sesuai kebutuhan Anda.
+              </p>
+
+              <div
+                className="
+                  mt-8
+                  flex
+                  flex-col
+                  gap-3
+                  sm:flex-row
+                  sm:flex-wrap
+                  sm:gap-4
+                "
+              >
+                <Link
+                  to="/kategori"
+                  className="
+                    flex
+                    w-full
+                    items-center
+                    justify-center
+                    gap-2
+                    rounded-xl
+                    bg-orange-500
+                    px-6
+                    py-3
+                    font-semibold
+                    shadow-lg
+                    transition
+                    hover:bg-orange-600
+                    sm:w-auto
+                  "
+                >
+                  Lihat Produk
+                  <ArrowRight size={20} />
+                </Link>
+
+                <Link
+                  to="/custom"
+                  className="
+                    flex
+                    w-full
+                    items-center
+                    justify-center
+                    rounded-xl
+                    border
+                    border-white/40
+                    bg-white/10
+                    px-6
+                    py-3
+                    font-semibold
+                    text-white
+                    backdrop-blur-sm
+                    transition
+                    hover:bg-white
+                    hover:text-blue-700
+                    sm:w-auto
+                  "
+                >
+                  Custom Terpal
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =========================
+            FEATURE
+        ========================== */}
+        <section
+          className="
+            relative
+            z-20
+            mx-auto
+            w-full
+            max-w-7xl
+            px-4
             sm:px-6
-            sm:py-16
-            lg:min-h-[620px]
             lg:px-8
-            lg:py-24
             xl:px-30
           "
         >
-          <div className="max-w-3xl">
-            <p
-              className="
-                mb-3
-                text-sm
-                font-bold
-                tracking-[0.18em]
-                text-orange-400
-                sm:mb-4
-                sm:text-base
-              "
-            >
-              RAMA TERPAL
-            </p>
+          <div
+            className="
+              -mt-6
+              grid
+              grid-cols-1
+              overflow-hidden
+              rounded-2xl
+              bg-white
+              shadow-xl
+              sm:-mt-8
+              sm:grid-cols-2
+              lg:grid-cols-4
+            "
+          >
+            <div className="flex items-center gap-4 border-b border-gray-100 p-5 transition hover:bg-gray-50 sm:p-6 lg:border-b-0">
+              <div className="shrink-0 rounded-xl bg-blue-50 p-3">
+                <ShieldCheck className="text-blue-600" />
+              </div>
 
-            <h1
-              className="
-                max-w-3xl
-                text-3xl
-                font-bold
-                leading-tight
-                drop-shadow-lg
-                sm:text-4xl
-                md:text-5xl
-                lg:text-6xl
-              "
-            >
-              Terpal Berkualitas untuk Berbagai Kebutuhan
-            </h1>
+              <div>
+                <h3 className="font-semibold text-gray-800">
+                  Bahan Berkualitas
+                </h3>
 
-            <p
-              className="
-                mt-5
-                max-w-2xl
-                text-base
-                leading-relaxed
-                text-gray-200
-                drop-shadow
-                sm:mt-6
-                sm:text-lg
-                lg:text-xl
-              "
-            >
-              Pilih berbagai bahan dan ukuran terpal atau pesan ukuran custom
-              sesuai kebutuhan Anda.
-            </p>
+                <p className="mt-1 text-sm text-gray-500">
+                  Material kuat dan tahan lama
+                </p>
+              </div>
+            </div>
 
-            <div
-              className="
-                mt-8
-                flex
-                flex-col
-                gap-3
-                sm:flex-row
-                sm:flex-wrap
-                sm:gap-4
-              "
-            >
-              <Link
-                to="/kategori"
-                className="
-                  flex
-                  w-full
-                  items-center
-                  justify-center
-                  gap-2
-                  rounded-xl
-                  bg-orange-500
-                  px-6
-                  py-3
-                  font-semibold
-                  shadow-lg
-                  transition
-                  hover:bg-orange-600
-                  sm:w-auto
-                "
-              >
-                Lihat Produk
-                <ArrowRight size={20} />
-              </Link>
+            <div className="flex items-center gap-4 border-b border-gray-100 p-5 transition hover:bg-gray-50 sm:p-6 lg:border-b-0 ">
+              <div className="shrink-0 rounded-xl bg-blue-50 p-3">
+                <Ruler className="text-blue-600" />
+              </div>
 
-              <Link
-                to="/custom"
-                className="
-                  flex
-                  w-full
-                  items-center
-                  justify-center
-                  rounded-xl
-                  border
-                  border-white/40
-                  bg-white/10
-                  px-6
-                  py-3
-                  font-semibold
-                  text-white
-                  backdrop-blur-sm
-                  transition
-                  hover:bg-white
-                  hover:text-blue-700
-                  sm:w-auto
-                "
-              >
-                Custom Terpal
-              </Link>
+              <div>
+                <h3 className="font-semibold text-gray-800">
+                  Custom Ukuran
+                </h3>
+
+                <p className="mt-1 text-sm text-gray-500">
+                  Sesuai kebutuhan
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 border-b border-gray-100 p-5 transition hover:bg-gray-50 sm:border-b-0 sm:p-6">
+              <div className="shrink-0 rounded-xl bg-blue-50 p-3">
+                <Boxes className="text-blue-600" />
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-gray-800">
+                  Banyak Pilihan
+                </h3>
+
+                <p className="mt-1 text-sm text-gray-500">
+                  Beragam tipe terpal
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 p-5 transition hover:bg-gray-50 sm:p-6">
+              <div className="shrink-0 rounded-xl bg-blue-50 p-3">
+                <Truck className="text-blue-600" />
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-gray-800">
+                  Mudah Dipesan
+                </h3>
+
+                <p className="mt-1 text-sm text-gray-500">
+                  Checkout WhatsApp
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* =========================
-          FEATURE
-      ========================== */}
-
-      <section
-        className="
-          relative
-          z-20
-          mx-auto
-          max-w-7xl
-          px-4
-          sm:px-6
-          lg:px-8
-          xl:px-30
-        "
-      >
-        <div
-          className="
-            -mt-6
-            grid
-            grid-cols-1
-            overflow-hidden
-            rounded-2xl
-            bg-white
-            shadow-xl
-            sm:-mt-8
-            sm:grid-cols-2
-            lg:grid-cols-4
-          "
-        >
-          <div className="flex items-center gap-4 border-b border-gray-100 p-5 transition hover:bg-gray-50 sm:p-6 lg:border-b-0">
-            <div className="shrink-0 rounded-xl bg-blue-50 p-3">
-              <ShieldCheck className="text-blue-600" />
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-gray-800">
-                Bahan Berkualitas
-              </h3>
-
-              <p className="mt-1 text-sm text-gray-500">
-                Material kuat dan tahan lama
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-4 border-b border-gray-100 p-5 transition hover:bg-gray-50 sm:p-6 lg:border-b-0">
-            <div className="shrink-0 rounded-xl bg-blue-50 p-3">
-              <Ruler className="text-blue-600" />
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-gray-800">
-                Custom Ukuran
-              </h3>
-
-              <p className="mt-1 text-sm text-gray-500">
-                Sesuai kebutuhan
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-4 border-b border-gray-100 p-5 transition hover:bg-gray-50 sm:border-b-0 sm:p-6">
-            <div className="shrink-0 rounded-xl bg-blue-50 p-3">
-              <Boxes className="text-blue-600" />
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-gray-800">
-                Banyak Pilihan
-              </h3>
-
-              <p className="mt-1 text-sm text-gray-500">
-                Beragam tipe terpal
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-4 p-5 transition hover:bg-gray-50 sm:p-6">
-            <div className="shrink-0 rounded-xl bg-blue-50 p-3">
-              <Truck className="text-blue-600" />
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-gray-800">
-                Mudah Dipesan
-              </h3>
-
-              <p className="mt-1 text-sm text-gray-500">
-                Checkout WhatsApp
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       {/* =========================
           KATEGORI
@@ -620,7 +636,9 @@ export default function LandingPage() {
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.686391917023!2d108.2603435740287!3d-7.609064375212884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e65ef0b67bc851d%3A0xf05b9850f92f678e!2sRama%20Terpal!5e0!3m2!1sid!2sid!4v1787664545617!5m2!1sid!2sid"
                 width="100%"
                 height="450"
-                style={{ border: 0 }}
+                style={{
+                  border: 0,
+                }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"
