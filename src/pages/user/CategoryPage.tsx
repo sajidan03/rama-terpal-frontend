@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
     Search,
     Package,
@@ -21,6 +22,7 @@ const categories = [
 ];
 
 
+
 function formatRupiah(value: number) {
 
     return new Intl.NumberFormat(
@@ -36,6 +38,7 @@ function formatRupiah(value: number) {
 
 
 
+
 export default function CategoryPage() {
 
 
@@ -45,26 +48,30 @@ export default function CategoryPage() {
 
 
 
-    const filteredProducts =
-        products.filter(product => {
+    const filteredProducts = products.filter(product => {
 
 
-            const categoryMatch =
-                active === "Semua"
-                ||
-                product.type === active;
+        const kategoriCocok =
+            active === "Semua"
+            ||
+            product.type === active;
 
 
-            const searchMatch =
-                `${product.type} ${product.ukuran}`
-                    .toLowerCase()
-                    .includes(keyword.toLowerCase());
+
+        const pencarianCocok =
+            `${product.nama} ${product.ukuran} ${product.type}`
+                .toLowerCase()
+                .includes(
+                    keyword.toLowerCase()
+                );
 
 
-            return categoryMatch && searchMatch;
+
+        return kategoriCocok && pencarianCocok;
 
 
-        });
+    });
+
 
 
 
@@ -88,6 +95,7 @@ max-w-7xl
             >
 
 
+
                 {/* HEADER */}
 
                 <div>
@@ -96,7 +104,6 @@ max-w-7xl
                         className="
 text-3xl
 font-semibold
-tracking-tight
 text-gray-900
 "
                     >
@@ -120,6 +127,9 @@ text-gray-500
 
 
 
+
+
+
                 {/* CATEGORY */}
 
 
@@ -136,10 +146,11 @@ lg:grid-cols-8
 
 
                     {
+
                         categories.map(category => {
 
 
-                            const total =
+                            const jumlahProduk =
                                 category === "Semua"
                                     ?
                                     products.length
@@ -168,9 +179,9 @@ duration-300
 
 ${active === category
                                             ?
-                                            "border-blue-600 bg-blue-600 text-white shadow-lg"
+                                            "bg-blue-600 text-white shadow-lg"
                                             :
-                                            "border-gray-100 bg-white hover:-translate-y-1 hover:shadow-md"
+                                            "bg-white border-gray-100 hover:-translate-y-1 hover:shadow-md"
                                         }
 
 `}
@@ -191,18 +202,11 @@ font-semibold
 
 
                                     <p
-                                        className={`
+                                        className="
 mt-2
 text-xs
-
-${active === category
-                                                ?
-                                                "text-blue-100"
-                                                :
-                                                "text-gray-500"
-                                            }
-
-`}
+opacity-80
+"
                                     >
 
                                         {
@@ -217,29 +221,23 @@ ${active === category
 
 
                                     <p
-                                        className={`
+                                        className="
 mt-4
 text-xs
 font-medium
-
-${active === category
-                                                ?
-                                                "text-white"
-                                                :
-                                                "text-blue-600"
-                                            }
-
-`}
+"
                                     >
 
-                                        {total} Produk
+                                        {jumlahProduk} Produk
 
                                     </p>
 
 
                                 </button>
 
+
                             )
+
 
                         })
 
@@ -247,6 +245,7 @@ ${active === category
 
 
                 </div>
+
 
 
 
@@ -288,9 +287,7 @@ text-gray-400
                             e => setKeyword(e.target.value)
                         }
 
-                        placeholder="
-Cari ukuran atau tipe terpal...
-"
+                        placeholder="Cari ukuran atau tipe terpal..."
 
                         className="
 w-full
@@ -318,45 +315,38 @@ focus:ring-blue-100
 
 
 
-                {/* RESULT */}
+
+                {/* LIST PRODUK */}
 
 
                 <div
                     className="
 mt-10
 mb-6
-flex
-items-center
-justify-between
 "
                 >
 
 
-                    <div>
-
-                        <h2
-                            className="
+                    <h2
+                        className="
 text-xl
 font-semibold
 text-gray-800
 "
-                        >
-                            Produk Terpal
-                        </h2>
+                    >
+                        Produk Terpal
+                    </h2>
 
 
-                        <p
-                            className="
+                    <p
+                        className="
 mt-1
 text-sm
 text-gray-500
 "
-                        >
-                            {filteredProducts.length} produk tersedia
-                        </p>
-
-
-                    </div>
+                    >
+                        {filteredProducts.length} produk tersedia
+                    </p>
 
 
                 </div>
@@ -365,10 +355,6 @@ text-gray-500
 
 
 
-
-
-
-                {/* PRODUCT GRID */}
 
 
                 <div
@@ -383,6 +369,7 @@ xl:grid-cols-4
 
 
                     {
+
                         filteredProducts.map(product => (
 
 
@@ -391,13 +378,12 @@ xl:grid-cols-4
                                 key={product.id}
 
                                 className="
-group
 overflow-hidden
 rounded-2xl
 border
 border-gray-100
 bg-white
-transition-all
+transition
 duration-300
 hover:-translate-y-1
 hover:shadow-xl
@@ -406,14 +392,15 @@ hover:shadow-xl
                             >
 
 
-                                {/* IMAGE */}
+                                {/* GAMBAR */}
+
 
                                 <div
                                     className="
 relative
 h-52
-overflow-hidden
 bg-gray-100
+overflow-hidden
 "
                                 >
 
@@ -422,18 +409,16 @@ bg-gray-100
 
                                         src={product.image}
 
-                                        alt={`Terpal ${product.type}`}
+                                        alt={product.nama}
 
                                         className="
 h-full
 w-full
 object-cover
-transition
-duration-500
-group-hover:scale-105
 "
 
                                     />
+
 
 
                                     <div
@@ -448,13 +433,14 @@ py-1
 text-xs
 font-medium
 text-blue-600
-shadow-sm
+shadow
 "
                                     >
 
                                         {product.type}
 
                                     </div>
+
 
 
                                 </div>
@@ -465,7 +451,8 @@ shadow-sm
 
 
 
-                                {/* CONTENT */}
+
+                                {/* DETAIL CARD */}
 
 
                                 <div
@@ -483,14 +470,15 @@ text-gray-800
 "
                                     >
 
-                                        Terpal {product.type}
+                                        {product.nama}
 
                                     </h3>
 
 
+
                                     <div
                                         className="
-mt-3
+mt-4
 space-y-2
 text-sm
 text-gray-500
@@ -508,7 +496,7 @@ gap-2
 
                                             <Ruler size={15} />
 
-                                            Ukuran {product.ukuran}
+                                            {product.ukuran}
 
                                         </p>
 
@@ -534,47 +522,36 @@ gap-2
 
 
 
+
                                     <div
                                         className="
 mt-5
 flex
-items-end
+items-center
 justify-between
 "
                                     >
 
 
-                                        <div>
-
-                                            <p
-                                                className="
-text-xs
-text-gray-400
-"
-                                            >
-                                                Harga
-                                            </p>
-
-
-                                            <p
-                                                className="
-mt-1
+                                        <p
+                                            className="
 text-lg
 font-semibold
 text-orange-500
 "
-                                            >
+                                        >
 
-                                                {formatRupiah(product.harga)}
+                                            {formatRupiah(product.harga)}
 
-                                            </p>
-
-
-                                        </div>
+                                        </p>
 
 
 
-                                        <button
+
+
+                                        <Link
+
+                                            to={`/produk/${product.id}`}
 
                                             className="
 flex
@@ -587,16 +564,16 @@ py-2.5
 text-sm
 font-medium
 text-white
-transition
 hover:bg-blue-700
 "
+
                                         >
 
                                             Detail
 
                                             <ArrowRight size={16} />
 
-                                        </button>
+                                        </Link>
 
 
 
@@ -604,13 +581,16 @@ hover:bg-blue-700
 
 
 
+
                                 </div>
+
 
 
                             </div>
 
 
                         ))
+
 
                     }
 
@@ -619,11 +599,11 @@ hover:bg-blue-700
 
 
 
+
             </div>
 
 
         </div>
-
 
     )
 
