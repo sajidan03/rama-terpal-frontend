@@ -1,6 +1,9 @@
 // FILE:
 // src/data/products.ts
 
+import contohTerpal from "../assets/contoh-terpal.png";
+
+
 
 export interface Product {
 
@@ -46,7 +49,7 @@ export const products: Product[] = [
     rating: 4.8,
     terjual: 15,
     deskripsi: "Terpal A5 ekonomis dengan kualitas baik untuk kebutuhan penutup barang dan penggunaan sehari-hari.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -61,7 +64,7 @@ export const products: Product[] = [
     rating: 4.9,
     terjual: 28,
     deskripsi: "Terpal A12 dengan bahan lebih tebal, kuat dan tahan lama untuk berbagai kebutuhan.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -76,7 +79,7 @@ export const products: Product[] = [
     rating: 4.7,
     terjual: 10,
     deskripsi: "Terpal A3 ringan dan praktis untuk kebutuhan rumah tangga maupun usaha.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -91,7 +94,7 @@ export const products: Product[] = [
     rating: 4.8,
     terjual: 13,
     deskripsi: "Terpal A5 dengan harga terjangkau dan kualitas yang stabil.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -106,7 +109,7 @@ export const products: Product[] = [
     rating: 4.9,
     terjual: 19,
     deskripsi: "Terpal A10 cocok untuk penggunaan yang membutuhkan daya tahan lebih baik.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -121,7 +124,7 @@ export const products: Product[] = [
     rating: 4.9,
     terjual: 22,
     deskripsi: "Terpal premium dengan material kuat dan tahan terhadap penggunaan berat.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -136,7 +139,7 @@ export const products: Product[] = [
     rating: 4.7,
     terjual: 9,
     deskripsi: "Terpal A2 pilihan ekonomis untuk kebutuhan sederhana.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -151,7 +154,7 @@ export const products: Product[] = [
     rating: 4.8,
     terjual: 17,
     deskripsi: "Terpal A3 dengan ukuran praktis dan mudah digunakan.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -166,7 +169,7 @@ export const products: Product[] = [
     rating: 4.8,
     terjual: 21,
     deskripsi: "Terpal A5 untuk kebutuhan umum dengan kualitas dan harga seimbang.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -181,7 +184,7 @@ export const products: Product[] = [
     rating: 4.9,
     terjual: 30,
     deskripsi: "Terpal A10 kuat untuk penggunaan luar ruangan.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -196,7 +199,7 @@ export const products: Product[] = [
     rating: 5,
     terjual: 45,
     deskripsi: "Terpal A12 premium dengan ketebalan dan daya tahan tinggi.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -211,7 +214,7 @@ export const products: Product[] = [
     rating: 4.8,
     terjual: 18,
     deskripsi: "Terpal A5 ukuran besar untuk berbagai kebutuhan.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   // PRODUK 13 - 31 LANJUTAN
@@ -227,7 +230,7 @@ export const products: Product[] = [
     rating: 4.8,
     terjual: 12,
     deskripsi: "Terpal A3 ukuran sedang dengan bahan ringan dan cocok untuk berbagai kebutuhan.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -242,7 +245,7 @@ export const products: Product[] = [
     rating: 4.8,
     terjual: 16,
     deskripsi: "Terpal Makmur dengan kualitas kuat dan harga ekonomis.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -257,7 +260,7 @@ export const products: Product[] = [
     rating: 4.9,
     terjual: 20,
     deskripsi: "Terpal A12 ukuran panjang untuk kebutuhan penutup area luas.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -272,7 +275,7 @@ export const products: Product[] = [
     rating: 4.9,
     terjual: 24,
     deskripsi: "Terpal A12 premium dengan daya tahan tinggi.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -287,7 +290,7 @@ export const products: Product[] = [
     rating: 4.9,
     terjual: 18,
     deskripsi: "Terpal A10 cocok untuk kebutuhan usaha dan outdoor.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -302,7 +305,7 @@ export const products: Product[] = [
     rating: 4.7,
     terjual: 10,
     deskripsi: "Terpal A2 ekonomis dengan ukuran luas.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -317,7 +320,7 @@ export const products: Product[] = [
     rating: 4.8,
     terjual: 14,
     deskripsi: "Terpal A3 dengan ukuran ideal untuk kebutuhan sehari-hari.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -332,7 +335,7 @@ export const products: Product[] = [
     rating: 4.9,
     terjual: 22,
     deskripsi: "Terpal A12 ukuran besar dengan kualitas premium.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -347,7 +350,7 @@ export const products: Product[] = [
     rating: 4.8,
     terjual: 8,
     deskripsi: "Terpal A3 ukuran besar untuk berbagai kebutuhan.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -362,7 +365,7 @@ export const products: Product[] = [
     rating: 4.8,
     terjual: 30,
     deskripsi: "Terpal A5 dengan ukuran luas dan kualitas baik.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -377,7 +380,7 @@ export const products: Product[] = [
     rating: 5,
     terjual: 35,
     deskripsi: "Terpal A12 premium untuk kebutuhan berat dan penggunaan lama.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -392,7 +395,7 @@ export const products: Product[] = [
     rating: 4.7,
     terjual: 11,
     deskripsi: "Terpal A2 ukuran luas dengan harga terjangkau.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -407,7 +410,7 @@ export const products: Product[] = [
     rating: 4.9,
     terjual: 19,
     deskripsi: "Terpal A12 ukuran besar untuk kebutuhan profesional.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -422,7 +425,7 @@ export const products: Product[] = [
     rating: 4.8,
     terjual: 15,
     deskripsi: "Terpal A3 dengan ukuran panjang dan praktis.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -437,7 +440,7 @@ export const products: Product[] = [
     rating: 4.8,
     terjual: 13,
     deskripsi: "Terpal A5 ukuran besar dengan kualitas stabil.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -452,7 +455,7 @@ export const products: Product[] = [
     rating: 4.8,
     terjual: 12,
     deskripsi: "Terpal A3 ukuran besar untuk berbagai kebutuhan.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -467,7 +470,7 @@ export const products: Product[] = [
     rating: 4.9,
     terjual: 17,
     deskripsi: "Terpal A5 dengan area luas dan bahan kuat.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -482,7 +485,7 @@ export const products: Product[] = [
     rating: 4.8,
     terjual: 9,
     deskripsi: "Terpal Makmur ukuran besar untuk kebutuhan serbaguna.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   },
 
   {
@@ -497,9 +500,7 @@ export const products: Product[] = [
     rating: 5,
     terjual: 21,
     deskripsi: "Terpal A12 premium ukuran besar dengan kualitas terbaik.",
-    image: "/images/terpal.jpg"
+    image: contohTerpal
   }
 
 ];
-
-
